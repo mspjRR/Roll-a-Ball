@@ -6,11 +6,11 @@ public class playercontrol : MonoBehaviour
 {
     public float speed;
     private Rigidbody rb;
-    private int count;
+    //private int count;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        count = 0;
+        //count = 0;
        // countText.text = "count:" + count.ToString();
     }
 
@@ -26,7 +26,8 @@ public class playercontrol : MonoBehaviour
      if(other.gameObject.CompareTag("Coins"))
         {
             other.gameObject.SetActive(false);
-            count = count + 1;
+            ScoreBehaviour.AddScore();
+           // count = count + 1;
             //countText.text = "count:" + count.ToString();
         }
     }
